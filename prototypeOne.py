@@ -15,7 +15,7 @@ except ImportError:
 
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets'
-CLIENT_SECRET_FILE = '/home/pi/Desktop/a/client_secret_300600279801-b2jru9ntp58m9kasml11jkacnoiao0un.apps.googleusercontent.com.json'
+CLIENT_SECRET_FILE = '' # UserContent.json
 APPLICATION_NAME = '' # Project name
 
 def get_credentials():
@@ -47,7 +47,7 @@ def todo():
     service = discovery.build('sheets', 'v4', http=http,
                               discoveryServiceUrl=discoveryUrl)
 
-    spreadsheetId = '' #Spread sheed ID
+    spreadsheetId = '' # Spread sheed ID
     rangeName = 'A1:A'
     values = {'values':[['Text',],]} # Text = msg for Spread Sheet
     
