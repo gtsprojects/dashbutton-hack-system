@@ -55,8 +55,6 @@ def todo():
         spreadsheetId=spreadsheetId, range=rangeName, valueInputOption='RAW',
         body=values).execute()
 
-todo()
-
 def arp_display(pkt):
     if pkt.haslayer(ARP):
         if pkt[ARP].op == 1:
