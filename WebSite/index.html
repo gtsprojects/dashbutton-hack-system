@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+
+        <script src="chart.js"></script>
+        <script src="f.js"></script>
+        
+        <style>
+            .container {
+                 width: 80%;
+                margin: 15px auto;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <canvas id="bar-chart" width="800" height="450"></canvas>
+
+        <script>
+
+
+            var lines = text();
+
+     	
+	        var name = lines[0];
+	        var gut = parseInt(lines[3], 10);
+	        var mittel = parseInt(lines[4], 10);
+	        var schlecht = parseInt(lines[5], 10);
+
+		// Bar chart
+           	new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                    labels: ["Zufrieden", "Mittel", "Unzufrieden"],
+                    datasets: [
+                      {
+                          label: "in Personen",
+                          backgroundColor: ["#008000", "#FFA500", "#800000"],
+                          data: [gut, mittel, schlecht]
+                      }
+                    ]
+                },
+                options: {
+                    legend: { display: false },
+                        title: {
+                            display: true,
+                            text: name
+                        }
+                    }
+                });
+            //}
+
+            
+
+        </script>
+
+    </body>
+</html>
